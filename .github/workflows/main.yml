@@ -42,7 +42,7 @@ jobs:
           uses: docker/build-push-action@v3
           with:
             # relative path to the place where source code with Dockerfile is located
-            context: ./simple-api
+            context: ./simple-api-student-main
             # Note: tags has to be all lower-case
             tags:  ${{secrets.DOCKERHUB_USERNAME}}/project_simpleapi
             push: ${{ github.ref == 'refs/heads/main' }}
@@ -50,13 +50,13 @@ jobs:
         - name: Build image and push database
           uses: docker/build-push-action@v3
           with:
-              context: ./database  # Chemin relatif vers le code source du conteneur de base de données
+              context: ./Database  # Chemin relatif vers le code source du conteneur de base de données
               tags: ${{secrets.DOCKERHUB_USERNAME}}/post_gre_tp  # Remplacez le nom de l'image et la version
               push: ${{ github.ref == 'refs/heads/main' }}
 
         - name: Build image and push httpd
           uses: docker/build-push-action@v3
           with:
-              context: ./httpd  # Chemin relatif vers le code source du serveur HTTP
+              context: ./FrontEnd  # Chemin relatif vers le code source du serveur HTTP
               tags: ${{secrets.DOCKERHUB_USERNAME}}/frontend_simple_api  # Remplacez le nom de l'image et la version
               push: ${{ github.ref == 'refs/heads/main' }}
