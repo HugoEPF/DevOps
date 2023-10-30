@@ -62,5 +62,5 @@ jobs:
         with:
           context: ./FrontEnd # Remplacez par le chemin relatif vers le code source d'Apache HTTP Server
           tags: ${{secrets.DOCKERHUB_USERNAME}}/frontend_simple_api
-          push: ${{ github.ref == 'refs/heads/master' }}
+          push: ${{ github.ref == 'refs/heads/main' }}
         # DO the same for httpd
