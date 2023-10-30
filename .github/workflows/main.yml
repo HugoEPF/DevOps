@@ -15,7 +15,11 @@ jobs:
 
       - name: Set up JDK 17
         uses: actions/setup-java@v2  # Utilisation d'une version appropriée
+        with:
+          java-version: 17
+          distribution: "adopt"
 
       #finally build your app with the latest command
       - name: Build and test with Maven
+        working-directory: simple-api-student-main
         run: mvn clean verify
