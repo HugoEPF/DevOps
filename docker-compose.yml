@@ -10,6 +10,8 @@ services:
     - app-network
     depends_on:
     - database
+    ports:
+      - "8080:8080"
 
   database:
     build:
@@ -21,11 +23,11 @@ services:
 
   httpd:
     build:
-      context: ./FrontEnd
+      context: ./devops-front-main
       dockerfile: Dockerfile
-    container_name: frontend_simple_api
+    container_name: front_final_simpleapi
     ports:
-      - "80:80"
+      - "8081:80"
     networks:
     - app-network
     depends_on:

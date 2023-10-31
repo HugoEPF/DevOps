@@ -1,0 +1,9 @@
+- name: Launch Application Container
+  docker_container:
+    name: project_simpleapi
+    image: hugoepf/project_simpleapi
+    pull: true
+    ports:
+      - "8080:8080"
+    networks:
+      - name: app-network

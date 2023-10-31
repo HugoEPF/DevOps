@@ -1,0 +1,17 @@
+- name: Launch Proxy Container
+  docker_container:
+    name: frontend_simple_api
+    image: hugoepf/frontend_simple_api:latest
+    pull: true
+    state: started
+    ports:
+      - "80:80"
+    networks:
+      - name: app-network
+
+  register: proxy_result
+
+
+- name: Debug Proxy Container Result
+  debug:
+    var: proxy_result

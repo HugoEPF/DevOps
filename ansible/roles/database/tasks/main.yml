@@ -1,0 +1,22 @@
+# Launch database
+- name: Launch PostgreSQL Container
+  docker_container:
+    name: post_gre_TP
+    image: hugoepf/post_gre_tp:latest
+    pull: true
+    state: started
+    ports:
+      - "8090:8080"
+    env:
+      POSTGRES_DB: db
+      POSTGRES_USER: usr
+      POSTGRES_PASSWORD: pwd
+
+    networks:
+      - name: app-network
+
+
+
+
+
+
