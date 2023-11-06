@@ -1,7 +1,7 @@
 - name: Launch Proxy Container
   docker_container:
-    name: frontend_simple_api
-    image: hugoepf/frontend_simple_api:latest
+    name: front_final_simpleapi
+    image: hugoepf/front_final_simpleapi:1.0
     pull: true
     state: started
     ports:
